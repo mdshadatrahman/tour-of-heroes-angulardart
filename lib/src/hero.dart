@@ -3,7 +3,7 @@ class Hero {
   String name;
 
   Hero({
-    this.id,
-    this.name,
+    required this.id,
+    required this.name,
   });
 }

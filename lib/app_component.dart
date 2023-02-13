@@ -1,13 +1,18 @@
 import 'package:ngdart/angular.dart';
 import 'package:tour_of_heroes/src/hero.dart';
 import 'package:ngforms/ngforms.dart';
+import 'package:tour_of_heroes/src/mock_heroes.dart';
 
 @Component(
   selector: 'my-app',
   templateUrl: 'app_component.html',
-  directives: [formDirectives]
+  styleUrls: ['app_components.css'],
+  directives: [formDirectives, coreDirectives],
 )
 class AppComponent {
   final title = 'Tour of Heroes';
-  Hero hero = Hero(id: 1, name: 'Windstorm');
+  List<Hero> heroes = mockHeroes;
+  Hero? selected;
+
+  void onSelect(Hero hero) => selected = hero;
 }
